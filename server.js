@@ -10,8 +10,9 @@ const port = process.env.PORT || 3000; // Use port 3000 or specified by environm
 
 // Configure CORS to specifically allow your Netlify frontend domain
 // IMPORTANT: Replace 'https://flyeasywebsite.netlify.app' with YOUR ACTUAL NETLIFY URL
+// Ensure there is NO trailing slash here in the origin URL!
 const corsOptions = {
-    origin: 'https://flyeasywebsite.netlify.app/', // <-- REPLACE THIS WITH YOUR NETLIFY URL
+    origin: 'https://flyeasywebsite.netlify.app', // <-- REMOVED TRAILING SLASH HERE
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // Allow cookies to be sent
     optionsSuccessStatus: 204 // For preflight requests
