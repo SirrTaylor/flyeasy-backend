@@ -8,8 +8,16 @@ const cors = require('cors'); // Import cors
 const app = express();
 const port = process.env.PORT || 3000; // Use port 3000 or specified by environment
 
-// Middleware
-app.use(cors()); // Enable CORS for all routes
+// Configure CORS to specifically allow your Netlify frontend domain
+// IMPORTANT: Replace 'https://flyeasywebsite.netlify.app' with YOUR ACTUAL NETLIFY URL
+const corsOptions = {
+    origin: 'https://flyeasywebsite.netlify.app/', // <-- REPLACE THIS WITH YOUR NETLIFY URL
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, // Allow cookies to be sent
+    optionsSuccessStatus: 204 // For preflight requests
+};
+app.use(cors(corsOptions)); // Apply CORS with specific options
+
 app.use(express.json()); // To parse JSON request bodies
 
 // Create a Nodemailer transporter using your email service details
