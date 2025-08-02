@@ -18,7 +18,7 @@ const port = process.env.PORT || 3000;
 // IMPORTANT: Replace 'https://flyeasywebsite.netlify.app' with your ACTUAL FRONTEND URL.
 // Ensure there is NO trailing slash in the origin URL!
 const corsOptions = {
-    origin: 'https://flyeasywebsite.netlify.app', // Your frontend domain (e.g., Vercel, Netlify URL)
+    origin: 'https://flyeasy-frontend.vercel.app', // Your frontend domain (e.g., Vercel, Netlify URL)
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allowed HTTP methods
     credentials: true, // Allow credentials (like cookies), though not strictly needed here
     optionsSuccessStatus: 204 // For preflight requests (successful OPTIONS request)
